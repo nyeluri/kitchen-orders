@@ -1,0 +1,15 @@
+com/cloudkitchen/shelves/ShelfFactory.class
+com/cloudkitchen/workers/ReceptionistWorker.class
+com/cloudkitchen/dtos/Temp.class
+com/cloudkitchen/CloudKitchen.class
+com/cloudkitchen/shelves/FrozenShelf.class
+com/cloudkitchen/workers/CourierWorker.class
+com/cloudkitchen/shelves/KitchenShelf.class
+com/cloudkitchen/shelves/OverFlowShelf.class
+com/cloudkitchen/shelves/ColdShelf.class
+com/cloudkitchen/shelves/HotShelf.class
+com/cloudkitchen/dtos/Order.class
+com/cloudkitchen/workers/KitchenWorker.class
+com/cloudkitchen/dtos/ShelfType.class
+com/cloudkitchen/utils/OrderReader.class
+com/cloudkitchen/shelves/Shelf.class

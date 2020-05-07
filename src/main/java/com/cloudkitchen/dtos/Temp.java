@@ -1,9 +1,9 @@
-package com.cloudkitchens.dtos;
+package com.cloudkitchen.dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Enum.
+ * Enum holding different Temp types
  */
 public enum Temp {
   @JsonProperty("frozen")

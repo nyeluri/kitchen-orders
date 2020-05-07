@@ -1,13 +1,16 @@
-package com.cloudkitchens.dtos;
+package com.cloudkitchen.dtos;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import java.time.Duration;
 import java.time.Instant;
 
-@Data
+
 /**
  * Order DTO.
  */
+@Data
+@AllArgsConstructor
 public class Order {
   /**
    * Unique Id of the Order.
@@ -33,22 +36,17 @@ public class Order {
    * Prepared Time.
    */
   private Instant preparedTime;
+
+  public Order(){
+
+  }
   /**
    * Get Order Value.
    * @param shelf - Shelf Type.
    * @return Order value
    */
-  public double getOrderValue(Shelf shelf) {
-    int decayModifier = 0;
-    switch(shelf) {
-      case OVERFLOW_SHELF:
-        decayModifier =  2;
-        break;
-      default:
-        decayModifier = 1;
-        break;
-    }
+  public double getOrderValue(ShelfType shelf) {
     return (shelfLife - decayRate * Duration.between(Instant.now(),
-        preparedTime).getSeconds() * decayModifier) / shelfLife;
+        preparedTime).getSeconds() * shelf.getDecayModifier()) / shelfLife;
   }
 }

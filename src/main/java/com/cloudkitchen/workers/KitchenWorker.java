@@ -1,19 +1,24 @@
-package com.cloudkitchens.workers;
+package com.cloudkitchen.workers;
 
-import com.cloudkitchens.KitchenShelf;
-import com.cloudkitchens.dtos.Order;
+import com.cloudkitchen.CloudKitchen;
+import com.cloudkitchen.shelves.KitchenShelf;
+import com.cloudkitchen.dtos.Order;
 import lombok.extern.slf4j.Slf4j;
 import java.time.Instant;
-/**
- * KitchenWorker is Callable Implementation which instantly
- * cooks orders and places it on best possible shelf.
- */
+
 @Slf4j
+/**
+ * Simple class modelling a Kitchen with methods to cook and place on shelf.
+ */
 public class KitchenWorker{
 
+  /**
+   * Cooks the order Instantly and places it on a shelf
+   */
   public static void processOrder(Order order) {
     // 1. Cook Order
     cookOrder(order);
+    CloudKitchen.cookedCount.getAndIncrement();
 
     // 2. Place it on Best possible shelf
     KitchenShelf.placeOnBestPossibleShelf(order);
